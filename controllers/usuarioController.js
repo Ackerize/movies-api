@@ -7,7 +7,7 @@ module.exports.registrar = (req, res) => {
   const { name, email, password, userType } = req.body;
 
   const salt = bcrypt.genSaltSync(Number(process.env.SALT_ROUNDS));
-  const hash = bcrypt.hashSync(password, salt);
+  const hash = bcrypt.hashSync(password, salt, null);
 
   const usuario = new Usuario({
     name,
