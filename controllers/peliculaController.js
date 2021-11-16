@@ -81,8 +81,8 @@ module.exports.calificarPelicula = async function (req, res) {
   /* nuevoPromedio = viejoPromedio + ((nuevoValor - viejoPromedio)/ conteoVotos) */
 
   const nuevoPromedio =
-    pelicula.calificacion +
-    (calificacion - pelicula.calificacion) / nuevoConteoVotos;
+   ( pelicula.calificacion +
+    (calificacion - pelicula.calificacion) / nuevoConteoVotos).toFixed(1);
 
   Pelicula.updateOne(
     { _id: idPelicula },
